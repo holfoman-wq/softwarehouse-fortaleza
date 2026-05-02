@@ -1,8 +1,8 @@
-#  SoftwareHouse Fortaleza - Dashboard & Education Platform
+# 🚀 SoftwareHouse Fortaleza - Dashboard & Education Platform
 
 Uma plataforma moderna de gestão e estudos desenvolvida para a **SoftwareHouse Fortaleza**. Este sistema integra um portal educacional com um dashboard administrativo, focado em alta performance, design minimalista (Dark Mode) e segurança de dados.
 
-##  Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **Frontend:** [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
 - **Estilização:** [Tailwind CSS](https://tailwindcss.com/) (v4)
@@ -11,7 +11,7 @@ Uma plataforma moderna de gestão e estudos desenvolvida para a **SoftwareHouse 
 - **Ícones:** [Lucide React](https://lucide.dev/)
 - **Roteamento:** [React Router DOM](https://reactrouter.com/)
 
-##  Funcionalidades Principais
+## ✨ Funcionalidades Principais
 
 - **Autenticação Segura:** Fluxo completo de Login e Cadastro utilizando Supabase Auth.
 - **LGPD Compliance:** Registro de consentimento (`consent_at`) no momento do cadastro.
@@ -20,7 +20,7 @@ Uma plataforma moderna de gestão e estudos desenvolvida para a **SoftwareHouse 
 - **Dashboard Responsivo:** Interface otimizada para Desktop e Mobile com tema Dark elegante.
 - **Gestão de Perfis:** Criação automática de perfis no banco de dados via Triggers do PostgreSQL.
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```bash
 ├── src/
@@ -34,7 +34,7 @@ Uma plataforma moderna de gestão e estudos desenvolvida para a **SoftwareHouse 
 └── .env.example        # Modelo de variáveis de ambiente
 ```
 
-##  Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 
 ### 1. Clonar o repositório
 ```bash
@@ -67,17 +67,26 @@ npm run dev
 ```
 O projeto estará disponível em `http://localhost:3000`.
 
-## Deploy (Vercel)
+## ☁️ Deploy (Vercel)
 
 1. Conecte seu repositório GitHub na [Vercel](https://vercel.com).
-2. Adicione as variáveis de ambiente (`VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`) nas configurações de build da Vercel.
-3. O deploy será feito automaticamente a cada push na branch principal.
+2. **IMPORTANTE:** Adicione as variáveis de ambiente manualmente no painel da Vercel:
+   - `VITE_SUPABASE_URL`: A URL do seu projeto (ex: `https://xyz.supabase.co`)
+   - `VITE_SUPABASE_ANON_KEY`: A sua chave "anon" pública.
+3. Certifique-se de que NÃO existam espaços ou aspas extras nos valores das variáveis. No painel da Vercel, o **Framework Preset** deve ser detectado automaticamente como **Vite**.
+4. O deploy será feito automaticamente a cada push na branch principal.
 
-##  Segurança e Boas Práticas
+### Solução de Problemas (Vercel Build Error)
+Se o build na Vercel falhar com "exit code 1":
+- Verifique se as variáveis de ambiente começam com `VITE_`.
+- Verifique se o `package-lock.json` está atualizado.
+- Verifique se as chaves estão corretas (uma URL começando com https e uma chave longa).
+
+## 🛡️ Segurança e Boas Práticas
 
 - **RLS (Row Level Security):** Todas as tabelas no Supabase possuem políticas de segurança ativas, garantindo que usuários vejam apenas seus próprios dados.
 - **Typescript:** Tipagem estática para evitar erros em tempo de execução.
 - **Clean Code:** Componentes pequenos, reutilizáveis e lógica separada em Hooks.
 
 ---
-Desenvolvido com ☕ e por **SoftwareHouse Fortaleza**.
+Desenvolvido com ☕ e 💻 por **SoftwareHouse Fortaleza**.

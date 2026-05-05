@@ -59,10 +59,10 @@ BEGIN
   INSERT INTO public.profiles (id, name, email, role, consent_at)
   VALUES (
     new.id, 
-    new.raw_user_meta_data->>'full_name', 
+    COALESCE(new.raw_user_meta_data->>'full_name', 'Usuário'), 
     new.email, 
     'student',
-    COALESCE((new.raw_user_meta_data->>'consent_accepted')::boolean, true)::text::timestamp -- Default to true for this simplified flow or handle as needed
+    now() -- Regista o momento do consentimento na criação
   );
   RETURN new;
 END;
